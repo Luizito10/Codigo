@@ -1,0 +1,5 @@
+print ("============== Desafio 02 ==============")
+dia = input("Dia: ")
+mes = input("Mês: ")
+ano = input("Ano: ")
+print("Sua data de Nascimento é:", dia,"/",mes,"/",ano)
