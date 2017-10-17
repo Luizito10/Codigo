@@ -13,7 +13,7 @@ entradas = np.array([3, 5, 10, 10, 20, 20, 20, 30, 40, 50, 60, 70, 70, 80, 100, 
 saidas = np.array([1.5, 2.0, 6.0, 7.0, 10.0, 12.0, 15.0, 8.0, 10.0, 20.0, 20.0, 25.0, 30.0, 25.0, 40.0, 35.0, 40.0, 30.0, 40.0, 40.0, 50.0, 40.0, 50.0, 60.0, 50.0])
 
 #Fazendo as inicializações necessarias
-alfa = 0.0001
+alfa = 0.00001
 want = (np.random.rand(1,1)) - 0.5
 bant = (np.random.rand(1,1)) - 0.5
 ciclos = 0
@@ -21,7 +21,7 @@ ciclos = 0
 
 #Treinamento da rede
 teste = len(entradas)
-while ciclos < 10:
+while ciclos < 100000:
     ciclos += 1
     for i in range(len(saidas)):
         y_entrada = want * entradas[i] + bant
@@ -30,9 +30,9 @@ while ciclos < 10:
         want = wnovo
         bant = bnovo
 
-print(ciclos)
-print(wnovo)
-print(bnovo)
+print("Quantidade de ciclos: ",ciclos)
+print("Valor do A: ",wnovo)
+print("Valor do B",bnovo)
 
 #Apos os treinamentos definiremos
 a = float(wnovo)
